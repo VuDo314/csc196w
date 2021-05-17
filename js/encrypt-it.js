@@ -30,15 +30,16 @@
 
   function shiftCipher(text) {
     text = text.toLowerCase();
-    let shift = 2;
-    let temp = 0;
+	const numOfAlphabets = 26;
+    let shift = 2;    
     let result = '';
     for (let i = 0; i <text.length; i++) {   
-      temp = 0;
+      let temp = 0;
       if (text.charCodeAt(i) >= 97 && text.charCodeAt(i) <= 122) {
-        temp = text.charCodeAt(i) + shift;
+        temp += text.charCodeAt(i);
+		temp += shift;
         if (temp > 122) {
-          temp -= 26;
+          temp -= numOfAlphabets;
         }
         result += String.fromCharCode(text.charCodeAt(temp));
       }
