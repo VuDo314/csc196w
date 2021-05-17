@@ -30,7 +30,7 @@
 
   function shiftCipher(text) {
     text = text.toLowerCase();
-    const upgrade = 2;
+    const upgrade = 5;
     let result = '';
     for (let i = 0; i <text.length; i++) {
       if (text.charCodeAt(i) >= 97 && text.charCodeAt(i) <= 122) {
