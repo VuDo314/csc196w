@@ -33,8 +33,9 @@
     let shift = 2;
     let result = '';
     for (let i = 0; i <text.length; i++) {
+      let temp = 0;
       if (text.charCodeAt(i) >= 97 && text.charCodeAt(i) <= 122) {
-        let temp = text.charCodeAt(i) + shift;
+         temp = text.charCodeAt(i) + shift;
         if (temp > 122) {
           temp -= 26;
         }
