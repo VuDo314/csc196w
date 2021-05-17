@@ -36,9 +36,9 @@
     for (let i = 0; i <text.length; i++) {
 	  temp = 0;
       if (text.charCodeAt(i) >= 97 && text.charCodeAt(i) <= 122) {
-		temp = text.charCodeAt(i) + shift;
+	temp = text.charCodeAt(i) + shift;
         if (temp > 122) {
-          temp = shift - 26;
+          temp -= 26;
         }
         result += String.fromCharCode(temp);
 		
