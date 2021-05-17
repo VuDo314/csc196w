@@ -28,7 +28,7 @@
     resultArea.textContent = shiftCipher(inputText.value);
   }
 
-  function shiftCipher(text) {
+   function shiftCipher(text) {
     text = text.toLowerCase();
     const shift = 2;
     let result = '';
@@ -38,8 +38,10 @@
           shift = shift - 122;
         }
         result += String.fromCharCode(text.charCodeAt(i) + shift);
-      
-      
+      }
+      else {
+		    result += text[i];
+	    }		
     }
     return result;
   }
