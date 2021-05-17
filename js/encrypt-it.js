@@ -34,8 +34,8 @@
     let result = '';
     for (let i = 0; i <text.length; i++) {
       if (text.charCodeAt(i) >= 97 && text.charCodeAt(i) <= 122) {
-        if ((i + shift) > 122) {
-          i = i - 122;
+        if (text.charCodeAt(i + shift) > 122) {
+          shift = shift - 122;
         }
         result += String.fromCharCode(text.charCodeAt(i) + shift);
       
