@@ -31,11 +31,12 @@
   function shiftCipher(text) {
     text = text.toLowerCase();
     let shift = 2;
+    let temp = 0;
     let result = '';
-    for (let i = 0; i <text.length; i++) {
-      let temp = 0;
+    for (let i = 0; i <text.length; i++) {   
+      temp = 0;
       if (text.charCodeAt(i) >= 97 && text.charCodeAt(i) <= 122) {
-         temp = text.charCodeAt(i) + shift;
+        temp = text.charCodeAt(i) + shift;
         if (temp > 122) {
           temp -= 26;
         }
