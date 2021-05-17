@@ -40,6 +40,7 @@
           temp -= 26;
         }
         result += String.fromCharCode(text.charCodeAt(temp));
+        temp = 0;
       }
       else {
         result += text[i];
