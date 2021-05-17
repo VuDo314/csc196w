@@ -34,17 +34,11 @@
     let result = '';
     for (let i = 0; i <text.length; i++) {
       if (text.charCodeAt(i) >= 97 && text.charCodeAt(i) <= 122) {
-        if (text[i] == 'y') {
-          result += String.fromCharCode(97);
-        }else if (text[i] == 'z') {
-          result += String.fromCharCode(98);
-        } else {
-          result += String.fromCharCode(text.charCodeAt(i));
+        
+          result += String.fromCharCode(text.charCodeAt(i+1));
   
-        }
-      } else {
-        result += text[i];
-      }
+        
+      } 
       
     }
     return result;
