@@ -39,19 +39,26 @@
  * and 'z' is shifted to 'a' (creating an alphabetical cycle).
  */
 function shiftCipher(text) {
-  text = text.toLowerCase();
-  let result = "";
-  for (let i = 0; i < text.length; i++) {
-    if (text[i] < 'a' || text[i] > 'z') {
-      result += text[i];
-    } else if (text[i] == 'z') {
-      result += 'a';
-    } else { // letter is between 'a' and 'y'
-      let letter = text.charCodeAt(i);
-      let resultLetter = String.fromCharCode(letter + 1);
-      result += resultLetter;
+    text = text.toLowerCase();
+    const upgrade = 5;
+    let result = '';
+    for (let i = 0; i <text.length; i++) {
+      if (text.charCodeAt(i) >= 97 && text.charCodeAt(i) <= 122) {
+        if (text[i] == 'y') {
+          result += String.fromCharCode(97);
+        }
+	else if (text[i] == 'z') {
+          result += String.fromCharCode(98);
+        } 
+	else {
+          result += String.fromCharCode(text.charCodeAt(i) + upgrade);
+        }
+      } 
+      else {
+        result += text[i];
+      }
+      
     }
+    return result;
   }
-  return result;
-}
 })();
