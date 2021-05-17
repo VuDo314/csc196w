@@ -32,23 +32,26 @@
     resultArea.textContent = shiftCipher(inputText.value);
 	
   }
-  function shiftCipher(text) {
+  
+	 function shiftCipher(text) {
     text = text.toLowerCase();
-    let shift = 2;
+    const upgrade = 5;
     let result = '';
     for (let i = 0; i <text.length; i++) {
       if (text.charCodeAt(i) >= 97 && text.charCodeAt(i) <= 122) {
-        if ((text.charCodeAt(i) + shift) > 122) {
-          shift -= 122;
+        if (text[i] == 'y') {
+          result += String.fromCharCode(97);
+        }else if (text[i] == 'z') {
+          result += String.fromCharCode(98);
+        } else {
+          result += String.fromCharCode(text.charCodeAt(i) + upgrade);
+  
         }
-        result += String.fromCharCode(text.charCodeAt(i) + shift);
+      } else {
+        result += text[i];
       }
-      else {
-	result += text[i];
-      }		
+      
     }
-    return result;
-  }
 })();
 
 
